@@ -39,3 +39,6 @@ async def owner_find(ctx):
     await ctx.send(f'The owner of this server is : {server_owner}')
 # @bot.command(name='help')
 
+
+
+bot.run(os.getenv('TOKEN'), log_handler=handler, log_level=logging.DEBUG)
