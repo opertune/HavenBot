@@ -43,7 +43,7 @@ async def addAutorole(ctx, *args):
         await ctx.send('Autorole added.')
         await ctx.send(f'Autorole list : {args}.')
 
-# Remove the server from db
+# Remove the server from database
 @bot.command(name='haven_delete')
 @commands.has_permissions(administrator=True)
 async def deleteServer(ctx):
