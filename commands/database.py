@@ -14,27 +14,32 @@ class DB:
         )
 
     def querry(self, sqlstmt, data):
+        self.mydb.reconnect()
         cursor = self.mydb.cursor()
         cursor.execute(sqlstmt, data)
         return cursor
 
     def insert(self, sqlstmt, data):
+        self.mydb.reconnect()
         cursor = self.querry(sqlstmt, data)
         self.mydb.commit()
         cursor.close()
 
     def select(self, sqlstmt, data):
+        self.mydb.reconnect()
         cursor = self.querry(sqlstmt, data)
         result = cursor.fetchall()
         cursor.close()
         return result
     
     def update(self, sqlstmt, data):
+        self.mydb.reconnect()
         cursor = self.querry(sqlstmt, data)
         self.mydb.commit()
         cursor.close()
 
     def delete(self, sqlstmt, data):
+        self.mydb.reconnect()
         cursor = self.querry(sqlstmt, data)
         self.mydb.commit()
         cursor.close()
